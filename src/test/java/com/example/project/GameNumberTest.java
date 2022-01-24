@@ -46,6 +46,13 @@ public class GameNumberTest {
         List<String> wordsToBeSpoken = game.words();
         assertEquals(100, wordsToBeSpoken.size());
         assertEquals("1", wordsToBeSpoken.get(0));
+
+        System.out.println("wordsToBeSpoken = " + wordsToBeSpoken);
+        assertEquals("1",wordsToBeSpoken.get(0));
+        assertEquals("Fizz",wordsToBeSpoken.get(2));
+        assertEquals("Buzz",wordsToBeSpoken.get(4));
+        assertEquals("FizzBuzz",wordsToBeSpoken.get(14));
+
     }
 
 
