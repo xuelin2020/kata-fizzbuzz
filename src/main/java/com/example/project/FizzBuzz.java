@@ -40,4 +40,18 @@ public class FizzBuzz {
             return String.valueOf( num);
         }
     }
+
+    public static String fizzBuzz(int i) {
+        if (isThreeAndFiveMultiple(i)) {
+            return "FizzBuzz";
+        }
+        if (isThreeMultiple(i)) {
+            return "Fizz";
+        }
+        if (isFiveMultiple(i)) {
+            return "Buzz";
+        }
+        return String.valueOf(i);
+
+    }
 }

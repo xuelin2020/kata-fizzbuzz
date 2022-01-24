@@ -1,6 +1,7 @@
 package com.example.project;
 
 
+import static com.example.project.FizzBuzz.fizzBuzz;
 import static com.example.project.FizzBuzz.isFiveMultiple;
 import static com.example.project.FizzBuzz.isThreeMultiple;
 import static com.example.project.FizzBuzz.replaceFizz;
@@ -8,8 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -24,7 +27,7 @@ class FizzBuzzTest {
     }
 
     public static Stream<Integer> fiveMultipleList() {
-        return Stream.of(5, 10, 15);
+        return Stream.of(5, 10, 20);
     }
 
     public static Stream<Integer> notFiveMultipleList() {
@@ -114,5 +117,28 @@ class FizzBuzzTest {
         assertEquals(String.valueOf(num), FizzBuzz.replaceFizzBuzz(num));
     }
 
+    @ParameterizedTest
+    @MethodSource("threeAndFiveMultipleList")
+    void should_return_result_when_input_(int num) {
+        assertEquals("FizzBuzz", FizzBuzz.fizzBuzz(num));
+    }
 
+    @ParameterizedTest
+    @MethodSource("threeMultipleList")
+    void should_return_result_when_input_2(int num) {
+        assertEquals("Fizz", fizzBuzz(num));
+    }
+
+
+    @ParameterizedTest
+    @MethodSource("fiveMultipleList")
+    void should_return_result_when_input_3(int num) {
+        assertEquals("Buzz", fizzBuzz(num));
+    }
+
+
+    @Test
+    void log() {
+        IntStream.range(1,100).forEach(i -> System.out.print(i + "<->" + String.valueOf(fizzBuzz(i)) +"..."));
+    }
 }
