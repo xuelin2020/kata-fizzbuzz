@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 class FizzBuzzTest {
@@ -21,6 +22,10 @@ class FizzBuzzTest {
 
     public static Stream<Integer> fiveMultipleList() {
         return Stream.of(5, 10, 15);
+    }
+
+    public static Stream<Integer> notFiveMultipleList() {
+        return Stream.of(1, 2, 3);
     }
 
     @ParameterizedTest
@@ -41,6 +46,12 @@ class FizzBuzzTest {
     @MethodSource("fiveMultipleList")
     void should_return_true_when_input_parameter_is_5_multiple(int num) {
         assertTrue(FizzBuzz.isFiveMultiple(num));
+    }
+
+    @ParameterizedTest
+    @MethodSource("notFiveMultipleList")
+    void should_return_false_when_input_parameter_is_5_multiple(int num) {
+        assertFalse(FizzBuzz.isFiveMultiple(num));
     }
 
 
