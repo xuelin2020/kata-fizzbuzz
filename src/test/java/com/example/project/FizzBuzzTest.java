@@ -139,6 +139,6 @@ class FizzBuzzTest {
 
     @Test
     void log() {
-        IntStream.range(1,100).forEach(i -> System.out.print(i + "<->" + String.valueOf(fizzBuzz(i)) +"..."));
+        IntStream.range(1,100).forEach(i -> System.out.print(i + " -> " + (fizzBuzz(i)) +"\n"));
     }
 }
