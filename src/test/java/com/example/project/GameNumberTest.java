@@ -37,4 +37,6 @@ public class GameNumberTest {
         Game game = new Game(100);
         assertEquals(game.size(), 100);
     }
+
+
 }
