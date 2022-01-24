@@ -5,4 +5,8 @@ public class FizzBuzz {
     public static boolean isThreeMultiple(int num) {
         return num != 0 && num % 3 == 0;
     }
+
+    public static boolean isFiveMultiple(int num) {
+        return true;
+    }
 }

@@ -19,6 +19,10 @@ class FizzBuzzTest {
         return Stream.of(1, 2, 0);
     }
 
+    public static Stream<Integer> fiveMultipleList() {
+        return Stream.of(5, 10, 15);
+    }
+
     @ParameterizedTest
     @MethodSource("threeMultipleList")
     void should_return_true_when_input_parameter_is_3_multiple(int num) {
@@ -30,6 +34,13 @@ class FizzBuzzTest {
     @MethodSource("notThreeMultipleList")
     void should_return_false_when_input_parameter_is_3_multiple(int num) {
         assertFalse(FizzBuzz.isThreeMultiple(num));
+    }
+
+
+    @ParameterizedTest
+    @MethodSource("fiveMultipleList")
+    void should_return_true_when_input_parameter_is_5_multiple(int num) {
+        assertTrue(FizzBuzz.isFiveMultiple(num));
     }
 
 
