@@ -4,7 +4,6 @@ package com.example.project;
 import static com.example.project.FizzBuzz.fizzBuzz;
 import static com.example.project.FizzBuzz.isFiveMultiple;
 import static com.example.project.FizzBuzz.isThreeMultiple;
-import static com.example.project.FizzBuzz.replaceFizz;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -68,29 +67,6 @@ class FizzBuzzTest {
         assertFalse(isFiveMultiple(num));
     }
 
-    @ParameterizedTest
-    @MethodSource("threeMultipleList")
-    void should_return_Fizz_when_input_threeMultiple(int num) {
-        assertEquals("Fizz", replaceFizz(num));
-    }
-
-    @ParameterizedTest
-    @MethodSource("notThreeMultipleList")
-    void should_return_source_when_input_notThreeMultiple(int num) {
-        assertEquals(String.valueOf(num), replaceFizz(num));
-    }
-
-    @ParameterizedTest
-    @MethodSource("fiveMultipleList")
-    void should_return_Fizz_when_input_fiveMultiple(int num) {
-        assertEquals("Buzz", FizzBuzz.replaceBuzz(num));
-    }
-
-    @ParameterizedTest
-    @MethodSource("notFiveMultipleList")
-    void should_return_source_when_input_notFiveMultiple(int num) {
-        assertEquals(String.valueOf(num), FizzBuzz.replaceBuzz(num));
-    }
 
     @ParameterizedTest
     @MethodSource("threeAndFiveMultipleList")
@@ -105,17 +81,6 @@ class FizzBuzzTest {
         assertFalse(FizzBuzz.isThreeAndFiveMultiple(num));
     }
 
-    @ParameterizedTest
-    @MethodSource("threeAndFiveMultipleList")
-    void should_return_FizzBuzz_when_input_three_and_fiveMultiple(int num) {
-        assertEquals("FizzBuzz", FizzBuzz.replaceFizzBuzz(num));
-    }
-
-    @ParameterizedTest
-    @MethodSource("notThreeAndFiveMultipleList")
-    void should_return_source_when_input_notThreeAndFiveMultiple(int num) {
-        assertEquals(String.valueOf(num), FizzBuzz.replaceFizzBuzz(num));
-    }
 
     @ParameterizedTest
     @MethodSource("threeAndFiveMultipleList")
