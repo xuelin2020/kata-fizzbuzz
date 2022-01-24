@@ -11,7 +11,7 @@ public class FizzBuzz {
     }
 
     public static String replaceFizz(int num) {
-        if (isThreeMultiple(num)){
+        if (isThreeMultiple(num)) {
             return "Fizz";
         } else {
             return String.valueOf(num);
@@ -21,8 +21,15 @@ public class FizzBuzz {
     public static String replaceBuzz(int num) {
         if (isFiveMultiple(num)) {
             return "Buzz";
-        }else {
+        } else {
             return String.valueOf(num);
         }
+    }
+
+    public static boolean isThreeAndFiveMultiple(int num) {
+        if (isThreeMultiple(num) && isFiveMultiple(num)) {
+            return true;
+        }
+        return false;
     }
 }

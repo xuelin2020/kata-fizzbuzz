@@ -1,7 +1,9 @@
 package com.example.project;
 
 
-import static com.example.project.FizzBuzz.*;
+import static com.example.project.FizzBuzz.isFiveMultiple;
+import static com.example.project.FizzBuzz.isThreeMultiple;
+import static com.example.project.FizzBuzz.replaceFizz;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -27,6 +29,14 @@ class FizzBuzzTest {
 
     public static Stream<Integer> notFiveMultipleList() {
         return Stream.of(1, 2, 3);
+    }
+
+    public static Stream<Integer> notThreeAndFiveMultipleList() {
+        return Stream.of(10, 0, 20, 9);
+    }
+
+    public static Stream<Integer> threeAndFiveMultipleList() {
+        return Stream.of(15, 30, 45);
     }
 
     @ParameterizedTest
@@ -79,6 +89,18 @@ class FizzBuzzTest {
         assertEquals(String.valueOf(num), FizzBuzz.replaceBuzz(num));
     }
 
+    @ParameterizedTest
+    @MethodSource("threeAndFiveMultipleList")
+    void should_return_true_when_input_parameter_is_3_and_5_multiple(int num) {
+        assertTrue(FizzBuzz.isThreeAndFiveMultiple(num));
+    }
+
+
+    @ParameterizedTest
+    @MethodSource("notThreeAndFiveMultipleList")
+    void should_return_false_when_input_parameter_is_3_and_5_multiple(int num) {
+        assertFalse(FizzBuzz.isThreeAndFiveMultiple(num));
+    }
 
 
 }
