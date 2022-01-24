@@ -18,4 +18,11 @@ public class FizzBuzz {
         }
     }
 
+    public static String replaceBuzz(int num) {
+        if (isFiveMultiple(num)) {
+            return "Buzz";
+        }else {
+            return String.valueOf(num);
+        }
+    }
 }
