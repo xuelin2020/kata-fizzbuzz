@@ -2,6 +2,8 @@ package com.example.project;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -36,6 +38,14 @@ public class GameNumberTest {
     void should_create_game_object_with_given_size(){
         Game game = new Game(100);
         assertEquals(100, game.size());
+    }
+
+    @Test
+    void should_provide_words_to_be_spoken() {
+        Game game = new Game(100);
+        List<String> wordsToBeSpoken = game.words();
+        assertEquals(100, wordsToBeSpoken.size());
+        assertEquals("1", wordsToBeSpoken.get(0));
     }
 
 
