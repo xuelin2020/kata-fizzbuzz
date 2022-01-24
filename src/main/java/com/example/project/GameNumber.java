@@ -14,4 +14,8 @@ public class GameNumber {
     }
 
 
+    public String coveredWord() {
+
+        return "Fizz";
+    }
 }

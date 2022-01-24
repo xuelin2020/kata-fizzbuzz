@@ -12,4 +12,10 @@ class GameNumberTestTest {
         GameNumber gameNumber = new GameNumber(1);
         assertEquals("1", gameNumber.getNumber());
     }
+
+    @Test
+    void should_return_Fizz_when_3() {
+        GameNumber gameNumber = new GameNumber(3);
+        assertEquals("Fizz", gameNumber.coveredWord());
+    }
 }
