@@ -16,6 +16,9 @@ public class GameNumber {
         if (rawNumber % 5 == 0){
             return "Buzz";
         }
+        if (rawNumber % 15 == 0){
+            return "FizzBuzz";
+        }
         return String.valueOf(rawNumber);
     }
 }
