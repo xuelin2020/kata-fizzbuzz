@@ -1,11 +1,13 @@
 package com.example.project;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TestGameNumberTest {
 
     @Test
-    void should_create_game_number_from_raw_number() {
-        GameNumber gameNumber = new GameNumber();
+    void should_say_1_when_raw_number_is_1(){
+        GameNumber gameNumber = new GameNumber(1);
+        Assertions.assertEquals(gameNumber.toString(), ("1"));
     }
 }
