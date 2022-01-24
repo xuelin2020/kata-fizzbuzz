@@ -32,4 +32,12 @@ public class FizzBuzz {
         }
         return false;
     }
+
+    public static String replaceFizzBuzz(int num) {
+        if (isThreeAndFiveMultiple(num)){
+            return "FizzBuzz";
+        }else {
+            return String.valueOf( num);
+        }
+    }
 }

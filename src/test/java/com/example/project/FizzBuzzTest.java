@@ -102,5 +102,17 @@ class FizzBuzzTest {
         assertFalse(FizzBuzz.isThreeAndFiveMultiple(num));
     }
 
+    @ParameterizedTest
+    @MethodSource("threeAndFiveMultipleList")
+    void should_return_FizzBuzz_when_input_three_and_fiveMultiple(int num) {
+        assertEquals("FizzBuzz", FizzBuzz.replaceFizzBuzz(num));
+    }
+
+    @ParameterizedTest
+    @MethodSource("notThreeAndFiveMultipleList")
+    void should_return_source_when_input_notThreeAndFiveMultiple(int num) {
+        assertEquals(String.valueOf(num), FizzBuzz.replaceFizzBuzz(num));
+    }
+
 
 }
