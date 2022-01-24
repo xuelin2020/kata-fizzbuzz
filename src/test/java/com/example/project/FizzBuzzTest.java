@@ -16,7 +16,7 @@ class FizzBuzzTest {
     }
 
     public static Stream<Integer> notThreeMultipleList() {
-        return Stream.of(1, 2);
+        return Stream.of(1, 2, 0);
     }
 
     @ParameterizedTest
@@ -31,5 +31,7 @@ class FizzBuzzTest {
     void should_return_false_when_input_parameter_is_3_multiple(int num) {
         assertFalse(FizzBuzz.isThreeMultiple(num));
     }
+
+
 
 }
