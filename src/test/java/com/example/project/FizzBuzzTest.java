@@ -1,13 +1,15 @@
 package com.example.project;
 
 
+import static com.example.project.FizzBuzz.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 class FizzBuzzTest {
@@ -31,29 +33,39 @@ class FizzBuzzTest {
     @ParameterizedTest
     @MethodSource("threeMultipleList")
     void should_return_true_when_input_parameter_is_3_multiple(int num) {
-        assertTrue(FizzBuzz.isThreeMultiple(num));
+        assertTrue(isThreeMultiple(num));
     }
 
 
     @ParameterizedTest
     @MethodSource("notThreeMultipleList")
     void should_return_false_when_input_parameter_is_3_multiple(int num) {
-        assertFalse(FizzBuzz.isThreeMultiple(num));
+        assertFalse(isThreeMultiple(num));
     }
 
 
     @ParameterizedTest
     @MethodSource("fiveMultipleList")
     void should_return_true_when_input_parameter_is_5_multiple(int num) {
-        assertTrue(FizzBuzz.isFiveMultiple(num));
+        assertTrue(isFiveMultiple(num));
     }
 
     @ParameterizedTest
     @MethodSource("notFiveMultipleList")
     void should_return_false_when_input_parameter_is_5_multiple(int num) {
-        assertFalse(FizzBuzz.isFiveMultiple(num));
+        assertFalse(isFiveMultiple(num));
     }
 
+    @ParameterizedTest
+    @MethodSource("threeMultipleList")
+    void should_return_Fizz_when_input_threeMultiple(int num) {
+        assertEquals("Fizz", replaceFizz(num));
+    }
 
+    @ParameterizedTest
+    @MethodSource("notThreeMultipleList")
+    void should_return_source_when_input_notThreeMultiple(int num) {
+        assertEquals(String.valueOf(num), replaceFizz(num));
+    }
 
 }
