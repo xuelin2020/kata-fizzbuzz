@@ -35,7 +35,7 @@ public class GameNumberTest {
     @Test
     void should_create_game_object_with_given_size(){
         Game game = new Game(100);
-        assertEquals(game.size(), 100);
+        assertEquals(100, game.size());
     }
 
 
