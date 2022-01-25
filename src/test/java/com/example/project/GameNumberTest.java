@@ -20,4 +20,10 @@ public class GameNumberTest {
         assertEquals("Fizz", gameNumber.toString());
     }
 
+    @Test
+    void should_say_Buzz_when_raw_number_is_5() {
+        GameNumber gameNumber = new GameNumber(5);
+        assertEquals("Buzz", gameNumber.toString());
+    }
+
 }
