@@ -38,4 +38,9 @@ class GameNumberTestTest {
         assertEquals("FizzBuzz",gameNumber2.coveredWord());
     }
 
+    @Test
+    void should_create_mockList() {
+        MockList mockList = new MockList();
+        assertEquals(100, mockList.list().size());
+    }
 }
