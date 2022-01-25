@@ -15,7 +15,9 @@ public class GameNumber {
 
 
     public String coveredWord() {
-
-        return "Fizz";
+        if (number == 3){
+            return "Fizz";
+        }
+        return getNumber();
     }
 }

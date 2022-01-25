@@ -11,6 +11,7 @@ class GameNumberTestTest {
     void should_return_1_string_output_1() {
         GameNumber gameNumber = new GameNumber(1);
         assertEquals("1", gameNumber.getNumber());
+        assertEquals("1",gameNumber.coveredWord());
     }
 
     @Test
