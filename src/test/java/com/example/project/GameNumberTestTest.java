@@ -31,4 +31,5 @@ class GameNumberTestTest {
         GameNumber gameNumber = new GameNumber(15);
         assertEquals("FizzBuzz",gameNumber.coveredWord());
     }
+
 }
