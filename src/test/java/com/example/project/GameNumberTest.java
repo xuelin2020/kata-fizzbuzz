@@ -12,4 +12,12 @@ public class GameNumberTest {
         GameNumber gameNumber = new GameNumber(1);
         assertEquals("1", gameNumber.toString());
     }
+
+
+    @Test
+    void should_say_Fizz_when_raw_number_is_3() {
+        GameNumber gameNumber = new GameNumber(3);
+        assertEquals("Fizz", gameNumber.toString());
+    }
+
 }
