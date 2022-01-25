@@ -15,9 +15,11 @@ class GameNumberTestTest {
     }
 
     @Test
-    void should_return_Fizz_when_3() {
+    void should_return_Fizz_when_3_multiple() {
         GameNumber gameNumber = new GameNumber(3);
         assertEquals("Fizz", gameNumber.coveredWord());
+        GameNumber gameNumber2 = new GameNumber(6);
+        assertEquals("Fizz", gameNumber2.coveredWord());
     }
 
     @Test
