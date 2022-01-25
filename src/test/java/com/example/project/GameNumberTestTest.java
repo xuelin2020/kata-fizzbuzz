@@ -42,5 +42,7 @@ class GameNumberTestTest {
     void should_create_mockList() {
         MockList mockList = new MockList();
         assertEquals(100, mockList.list().size());
+        assertEquals(1, mockList.list().get(0));
+        assertEquals(100, mockList.list().get(99));
     }
 }
