@@ -57,4 +57,10 @@ class GameNumberTestTest {
         assertEquals("7",words.get(6));
         assertEquals("FizzBuzz",words.get(14));
     }
+
+    @Test
+    void log() {
+        List<String> words = new MockList().coveredWordList();
+        System.out.println("words = " + words);
+    }
 }
