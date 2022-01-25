@@ -23,15 +23,20 @@ class GameNumberTestTest {
     }
 
     @Test
-    void should_return_Buzz_when_5() {
+    void should_return_Buzz_when_5_multiple() {
         GameNumber gameNumber = new GameNumber(5);
         assertEquals("Buzz", gameNumber.coveredWord());
+        GameNumber gameNumber2 = new GameNumber(10);
+        assertEquals("Buzz", gameNumber2.coveredWord());
     }
 
     @Test
-    void should_return_FizzBuzz_when_15() {
+    void should_return_FizzBuzz_when_15_multiple() {
         GameNumber gameNumber = new GameNumber(15);
         assertEquals("FizzBuzz",gameNumber.coveredWord());
+        GameNumber gameNumber2 = new GameNumber(30);
+        assertEquals("FizzBuzz",gameNumber.coveredWord());
+
     }
 
 }
