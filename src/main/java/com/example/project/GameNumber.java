@@ -11,15 +11,19 @@ public class GameNumber {
 
     @Override
     public String toString() {
-        if (rawNumber %3 == 0 && rawNumber %5 ==0){
+        if (divisibleBy(3) && divisibleBy(5)) {
             return "FizzBuzz";
         }
-        if (rawNumber %3 ==0 ){
+        if (divisibleBy(3)) {
             return "Fizz";
         }
-        if (rawNumber %5 ==0 ){
+        if (divisibleBy(5)) {
             return "Buzz";
         }
         return String.valueOf(rawNumber);
+    }
+
+    private boolean divisibleBy(int i) {
+        return rawNumber % i == 0;
     }
 }
