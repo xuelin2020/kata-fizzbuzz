@@ -2,6 +2,8 @@ package com.example.project;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 class GameNumberTestTest {
@@ -41,8 +43,18 @@ class GameNumberTestTest {
     @Test
     void should_create_mockList() {
         MockList mockList = new MockList();
-        assertEquals(100, mockList.list().size());
-        assertEquals(1, mockList.list().get(0));
-        assertEquals(100, mockList.list().get(99));
+        assertEquals(100, mockList.getList().size());
+        assertEquals(1, mockList.getList().get(0));
+        assertEquals(100, mockList.getList().get(99));
+    }
+
+    @Test
+    void should_covert_list() {
+        MockList mockList = new MockList();
+        List<String> words = mockList.coveredWordList();
+        assertEquals("Fizz",words.get(2));
+        assertEquals("Buzz",words.get(4));
+        assertEquals("7",words.get(6));
+        assertEquals("FizzBuzz",words.get(14));
     }
 }
