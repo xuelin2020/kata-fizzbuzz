@@ -25,4 +25,10 @@ class GameNumberTestTest {
         GameNumber gameNumber = new GameNumber(5);
         assertEquals("Buzz", gameNumber.coveredWord());
     }
+
+    @Test
+    void should_return_FizzBuzz_when_15() {
+        GameNumber gameNumber = new GameNumber(15);
+        assertEquals("FizzBuzz",gameNumber.coveredWord());
+    }
 }
