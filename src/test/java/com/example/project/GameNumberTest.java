@@ -33,4 +33,9 @@ public class GameNumberTest {
         assertEquals("FizzBuzz", gameNumber.toString());
     }
 
+    @Test
+    void should_return_game_object_with_given_size() {
+        Game game = new Game(100);
+        assertEquals(100, game.size());
+    }
 }
