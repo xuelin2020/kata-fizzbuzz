@@ -2,7 +2,7 @@ package com.example.project;
 
 public class GameNumber {
 
-    private int rawNumber;
+    private final int rawNumber;
 
     public GameNumber(int rawNumber) {
         this.rawNumber = rawNumber;
@@ -10,9 +10,13 @@ public class GameNumber {
 
     @Override
     public String toString() {
-        if (rawNumber %5 == 0 && rawNumber %3 == 0) return "FizzBuzz";
-        if (rawNumber %3 == 0) return "Fizz";
-        if (rawNumber %5 == 0) return "Buzz";
+        if (isaBoolean(5) && isaBoolean(3)) return "FizzBuzz";
+        if (isaBoolean(3)) return "Fizz";
+        if (isaBoolean(5)) return "Buzz";
         return rawNumber + "";
+    }
+
+    private boolean isaBoolean(int i) {
+        return rawNumber % i == 0;
     }
 }

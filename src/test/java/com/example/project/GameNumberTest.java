@@ -70,5 +70,6 @@ public class GameNumberTest {
         //then
         assertEquals("1", list.get(0));
         assertEquals("Fizz", list.get(2));
+        System.out.println("list = " + list);
     }
 }

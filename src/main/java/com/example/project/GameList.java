@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class GameList {
 
-    private List<GameNumber> gameNumbers = new ArrayList<>();
+    private final List<GameNumber> gameNumbers = new ArrayList<>();
 
     public GameList(int size) {
         for (int i = 1; i <= size; i++) {
