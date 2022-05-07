@@ -17,6 +17,7 @@ public class FizzBuzzTest {
     @CsvSource({
             "1,1",
             "3,Fizz",
+            "5,Buzz",
     })
     void should_input_1_return_1(int input,String expected) {
         FizzBuzz fizzBuzz = new FizzBuzz(input);
