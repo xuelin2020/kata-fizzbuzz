@@ -16,4 +16,10 @@ public class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz(1);
         assertEquals("1", fizzBuzz.toString());
     }
+
+    @Test
+    void should_input_3_return_Fizz() {
+        FizzBuzz fizzBuzz = new FizzBuzz(3);
+        assertEquals("Fizz", fizzBuzz.toString());
+    }
 }
