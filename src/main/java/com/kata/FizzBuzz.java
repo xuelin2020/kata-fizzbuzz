@@ -2,13 +2,16 @@ package com.kata;
 
 public class FizzBuzz {
 
-    public FizzBuzz(int i) {
+    private int value;
 
+    public FizzBuzz(int value) {
+        this.value = value;
     }
 
 
     @Override
     public String toString() {
-        return "1";
+        return String.valueOf(this.value);
     }
+
 }
