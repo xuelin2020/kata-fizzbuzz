@@ -11,9 +11,13 @@ public class FizzBuzz {
 
     @Override
     public String toString() {
-        if (value % 5 == 0) return "Buzz";
-        if (value % 3 == 0) return "Fizz";
+        if (isDivBy(5)) return "Buzz";
+        if (isDivBy(3)) return "Fizz";
         return String.valueOf(this.value);
+    }
+
+    private boolean isDivBy(int i) {
+        return value % i == 0;
     }
 
 }
