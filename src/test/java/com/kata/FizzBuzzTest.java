@@ -10,4 +10,10 @@ public class FizzBuzzTest {
     void should_work_on() {
         assertEquals(1, 1);
     }
+
+    @Test
+    void should_input_1_return_1() {
+        FizzBuzz fizzBuzz = new FizzBuzz(1);
+        assertEquals("1", fizzBuzz.toString());
+    }
 }
