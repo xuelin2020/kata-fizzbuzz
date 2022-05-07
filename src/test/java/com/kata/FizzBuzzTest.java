@@ -3,6 +3,8 @@ package com.kata;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class FizzBuzzTest {
 
@@ -11,15 +13,14 @@ public class FizzBuzzTest {
         assertEquals(1, 1);
     }
 
-    @Test
-    void should_input_1_return_1() {
-        FizzBuzz fizzBuzz = new FizzBuzz(1);
-        assertEquals("1", fizzBuzz.toString());
+    @ParameterizedTest(name = "should return {1} given {0}")
+    @CsvSource({
+            "1,1",
+            "3,Fizz",
+    })
+    void should_input_1_return_1(int input,String expected) {
+        FizzBuzz fizzBuzz = new FizzBuzz(input);
+        assertEquals(expected, fizzBuzz.toString());
     }
 
-    @Test
-    void should_input_3_return_Fizz() {
-        FizzBuzz fizzBuzz = new FizzBuzz(3);
-        assertEquals("Fizz", fizzBuzz.toString());
-    }
 }
