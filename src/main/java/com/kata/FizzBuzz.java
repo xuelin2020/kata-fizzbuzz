@@ -11,6 +11,7 @@ public class FizzBuzz {
 
     @Override
     public String toString() {
+        if (value % 3 == 0) return "Fizz";
         return String.valueOf(this.value);
     }
 
